@@ -9,7 +9,19 @@ players = input()
 winning_score = int(input("What shall be the winning score?\n"))
 player_1_score = 0
 player_2_score = 0
-cpu_score = 0
+
+def game_header():
+  player_2_title = None
+
+  if players == "1":
+    player_2_title = "CPU"
+  else:
+    player_2_title = "Player 2"
+
+  print("*******************************")
+  print(f"Winning Score: {winning_score}\n")
+  print(f"Score: Player 1 - {player_1_score} Vs. {player_2_title} - {player_2_score}")
+  print("*******************************\n")
 
 if players == "1":
   player_2 = "CPU"
@@ -17,11 +29,8 @@ else:
   player_2 = "Player 2"
 
 if player_2 == "CPU":
-  while ((player_1_score < winning_score) and (cpu_score < winning_score)):
-    print("*******************************")
-    print(f"Winning Score: {winning_score}\n")
-    print(f"Score: Player 1 - {player_1_score} Vs. CPU - {cpu_score}")
-    print("*******************************\n")
+  while ((player_1_score < winning_score) and (player_2_score < winning_score)):
+    game_header()
 
     player_1_input = input("Player 1 - Enter choice:\n").lower()
 
@@ -42,25 +51,22 @@ if player_2 == "CPU":
       player_1_score += 1
       print("Player 1 wins")
     else:
-      cpu_score += 1
+      player_2_score += 1
       print("CPU Wins")
 
   if player_1_score == winning_score:
     print(("*******************************"))
     print("Player 1 is victorious!!!")
-    print(f"Final Score: Player 1 - {player_1_score} Vs. CPU - {cpu_score}")
+    print(f"Final Score: Player 1 - {player_1_score} Vs. CPU - {player_2_score}")
     print(("*******************************"))
-  elif cpu_score == winning_score:
+  elif player_2_score == winning_score:
     print(("*******************************"))
     print("CPU is victorious!!!")
-    print(f"Final Score: Player 1 - {player_1_score} Vs. CPU - {cpu_score}")
+    print(f"Final Score: Player 1 - {player_1_score} Vs. CPU - {player_2_score}")
     print(("*******************************"))
 else:
   while ((player_1_score < winning_score) and (player_2_score < winning_score)):
-    print("*******************************")
-    print(f"Winning Score: {winning_score}\n")
-    print(f"Score: Player 1 - {player_1_score} Vs. Player 2 - {player_2_score}")
-    print("*******************************\n")
+    game_header()
 
     player_1_input = input("Player 1: Enter choice\n").lower()
     player_2_input = input("Player 2: Enter choice\n").lower()
