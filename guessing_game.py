@@ -1,17 +1,17 @@
 from random import randint
 cpu_random_num = randint(1, 10)
 
-user_input = int(input("Guess a number between 1 and 10:\n"))
 keep_playing = True
+user_input = None
 
 while keep_playing: 
   while user_input != cpu_random_num:
+    user_input = int(input("Guess a number between 1 and 10:\n"))
+
     if user_input < cpu_random_num:
       print("Too low, try again!")
-      user_input = int(input("Guess a number between 1 and 10:\n"))
     else:
       print("Too high, try again!")
-      user_input = int(input("Guess a number between 1 and 10:\n"))
 
   print("CONGRATS! You guessed correctly!")
 
