@@ -65,6 +65,13 @@ def winner(player_1_score, player_2, player_2_score, winning_score):
     print(f"Final Score: Player 1 - {player_1_score} Vs. {player_2} - {player_2_score}")
     print(("*******************************"))
 
+  play_again = input("Would you like to play again? (y/n)\n")
+
+  if play_again == "y":
+    game_start()
+  else:
+    print("Thanks for playing. Bye!")
+
 def one_player(winning_score, player_1_score, player_2, player_2_score):
   while ((player_1_score < winning_score) and (player_2_score < winning_score)):
     game_header(winning_score, player_1_score, player_2, player_2_score)
