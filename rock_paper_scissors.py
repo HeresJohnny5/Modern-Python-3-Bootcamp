@@ -52,17 +52,17 @@ if player_2 == "CPU":
       print("Player 1 wins")
     else:
       player_2_score += 1
-      print("CPU Wins")
+      print(f"{player_2} Wins")
 
   if player_1_score == winning_score:
     print(("*******************************"))
     print("Player 1 is victorious!!!")
-    print(f"Final Score: Player 1 - {player_1_score} Vs. CPU - {player_2_score}")
+    print(f"Final Score: Player 1 - {player_1_score} Vs. {player_2} - {player_2_score}")
     print(("*******************************"))
   elif player_2_score == winning_score:
     print(("*******************************"))
     print("CPU is victorious!!!")
-    print(f"Final Score: Player 1 - {player_1_score} Vs. CPU - {player_2_score}")
+    print(f"Final Score: Player 1 - {player_1_score} Vs. {player_2} - {player_2_score}")
     print(("*******************************"))
 else:
   while ((player_1_score < winning_score) and (player_2_score < winning_score)):
@@ -84,17 +84,17 @@ else:
       print("Player 1 wins")
     else:
       player_2_score += 1
-      print("Player 2 wins")
+      print(f"{player_2} Wins")
 
     if player_1_score == winning_score:
       print(("*******************************"))
       print("Player 1 is victorious!!!")
-      print(f"Final Score: Player 1 - {player_1_score} Vs. Player 2 - {cpu_score}")
+      print(f"Final Score: Player 1 - {player_1_score} Vs. {player_2} - {player_2_score}")
       print(("*******************************"))
     elif player_2_score == winning_score:
       print(("*******************************"))
       print("Player 2 is victorious!!!")
-      print(f"Final Score: Player 1 - {player_1_score} Vs. Player 2 - {cpu_score}")
+      print(f"Final Score: Player 1 - {player_1_score} Vs. {player_2} - {player_2_score}")
       print(("*******************************"))
 
 
